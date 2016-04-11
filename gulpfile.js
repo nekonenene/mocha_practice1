@@ -55,7 +55,7 @@ gulp.task('copy', function() {
 	var ignoreFolders = '{es6,sass,pug,plugins,jade_php}';
 
 	gulp.src(['./source/**/*', '!./source/**/*.'+ignoreFiles, '!./source/'+ignoreFolders])
-		.pipe(gulp.dest('./webroot/'));
+		.pipe(gulp.dest('./optimized/'));
 
 		// .DS_Store は削除
 		del(['./**/.DS_Store']);
