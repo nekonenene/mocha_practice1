@@ -20,7 +20,7 @@
 		<!-- Zepto : CDN 上になければローカルから読み込み-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
 		<script>
-			window.zepto || document.write('<script src="./js/plugins/zepto.js"><\/script>')
+			window.zepto || document.write('<script src="./plugins/zepto.js"><\/script>')
 			
 		</script>
 	</head>
@@ -31,7 +31,8 @@
 				<h3>練習ページ</h3>
 				<div id="content">
 					<p>
-						<button class="blue-button" type="button">あお</button>
+						<textarea name="input-area" rows="6" cols="60"></textarea><br>
+						<button class="blue-button" type="button" onclick="calcStart()">あお</button>
 						<button class="green-button" type="button">みどり</button>
 						<button class="yellow-button" type="button">きいろ</button>
 						<button class="red-button" type="button">あか</button>

@@ -40,12 +40,12 @@ gulp.task('watch', function() {
 
 /* Live Reload!! */
 gulp.task('server', function() {
-	gulp.src('./optimized/')
+	gulp.src('./source/')
 		.pipe(webServer({
 			port             : 8013,
 			livereload       : true,
 			directoryListing : false,
-			open             : true
+			open             : false
 		}));
 });
 
