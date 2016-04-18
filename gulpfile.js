@@ -4,6 +4,8 @@ var del  = require('del');
 // JS plugins
 var babel  = require('gulp-babel');
 var uglify = require('gulp-uglify');
+// Test
+var mocha = require('gulp-mocha');
 
 // CSS plugins
 var sass    = require('gulp-sass');
@@ -32,7 +34,7 @@ gulp.task('watch', function() {
 	gulp.watch(['./source/**/*.es6'],  ['babel']);
 	gulp.watch(['./source/**/*.scss'], ['sass']);
 	gulp.watch(['./source/**/*.{gif,jpg,png,svg}'], ['imageMinify']);
-	gulp.watch(['./source/**/*.js']   , ['jsMinify']);
+	gulp.watch(['./source/**/*.js']   , ['mocha', 'jsMinify']);
 	gulp.watch(['./source/**/*.css']  , ['cssMinify']);
 	gulp.watch(['./source/**/*.html'] , ['htmlMinify']);
 });
@@ -74,6 +76,13 @@ gulp.task('babel', function() {
 		}))
 		.on('error', console.error.bind(console))
 		.pipe(gulp.dest('./source/'));
+});
+
+gulp.task('mocha', function () {
+	return gulp.src(['test/*.js'], {read: false})
+		// gulp-mocha needs filepaths so you can't have any plugins before it
+		.pipe(mocha({reporter: 'nyan'}))
+		.on('error', console.error.bind(console));
 });
 
 /* Sass + Scss , and CSS Next */
