@@ -139,3 +139,22 @@ function mochaTest(_value)
 		return false;
 	}
 }
+
+class Test
+{
+	constructor(_value = 10)
+	{
+		this.value = _value;
+	}
+
+	isOverZero()
+	{
+		console.log("this.value = " + this.value);
+		if(this.value > 0)
+		{
+			return true;
+		}else{
+			return false;
+		}
+	}
+}

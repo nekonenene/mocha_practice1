@@ -34,7 +34,7 @@ gulp.task('watch', function() {
 	gulp.watch(['./source/**/*.es6'],  ['babel']);
 	gulp.watch(['./source/**/*.scss'], ['sass']);
 	gulp.watch(['./source/**/*.{gif,jpg,png,svg}'], ['imageMinify']);
-	gulp.watch(['./source/**/*.js']   , ['mocha', 'jsMinify']);
+	gulp.watch(['./source/**/*.js']   , ['jsMinify']);
 	gulp.watch(['./source/**/*.css']  , ['cssMinify']);
 	gulp.watch(['./source/**/*.html'] , ['htmlMinify']);
 });
