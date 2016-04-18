@@ -79,9 +79,12 @@ gulp.task('babel', function() {
 });
 
 gulp.task('mocha', function () {
-	return gulp.src(['test/*.js'], {read: false})
+	return gulp.src(['./test/*.js'], {read: false})
 		// gulp-mocha needs filepaths so you can't have any plugins before it
-		.pipe(mocha({reporter: 'nyan'}))
+		.pipe(mocha({
+			ui      : 'bdd',
+			reporter: 'Nyan'
+		}))
 		.on('error', console.error.bind(console));
 });
 
