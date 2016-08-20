@@ -8,6 +8,6 @@ test:
         - npm install -D mocha-junit-reporter
 
     override:
-        - mocha --reporter mocha-junit-reporter:
+        - mocha --reporter mocha-junit-reporter: # test-results.xml を吐き出す
             environment:
                 MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
