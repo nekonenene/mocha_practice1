@@ -23,9 +23,16 @@ var imageMin = require('gulp-imagemin');
 // Live Reload
 var webServer = require('gulp-webserver');
 
+var defaultTasks = [
+	'copy',
+	'compile',
+	'minify',
+	'server',
+	'watch',
+];
 
 /* gulp とコマンドを打つと実行される */
-gulp.task('default', ['copy', 'compile', 'minify', 'server', 'watch'] );
+gulp.task('default', defaultTasks);
 
 /* watch 系まとめ : gulp watch */
 gulp.task('watch', function() {
