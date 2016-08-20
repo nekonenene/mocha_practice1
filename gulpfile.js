@@ -9,7 +9,8 @@ var mocha = require('gulp-mocha');
 
 // CSS plugins
 var sass    = require('gulp-sass');
-var cssNext = require('gulp-cssnext');
+var postCss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
 var csso    = require('gulp-csso');
 
 // HTML plugins
@@ -95,11 +96,15 @@ gulp.task('mocha', function () {
 		.on('error', console.error.bind(console));
 });
 
-/* Sass + Scss , and CSS Next */
+/* Sass + Scss , and PostCSS */
 gulp.task('sass', function() {
+	var postCssTasks = [
+		autoprefixer({ browsers: ['last 2 version'] }),
+	];
+
 	gulp.src(['./source/sass/**/*.{sass,scss}'])
 		.pipe(sass().on('error', sass.logError))
-		.pipe(cssNext())
+		.pipe(postCss(postCssTasks))
 		.pipe(gulp.dest('./source/'));
 });
 
