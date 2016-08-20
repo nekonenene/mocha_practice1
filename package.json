@@ -37,6 +37,7 @@
     "gulp-sass": "^2.2.0",
     "gulp-uglify": "^2.0.0",
     "gulp-webserver": "^0.9.1",
+    "jsdom": "^9.4.2",
     "mocha": "^3.0.2"
   }
 }

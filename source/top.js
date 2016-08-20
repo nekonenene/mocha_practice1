@@ -127,8 +127,10 @@ function arrayingInput(_string, _startLine) {
 	return inputArray;
 }
 
+var Foo = {};
+
 /** Mocha を試すためのテストメソッド : 0 以上の値を与えられた時 true */
-function mochaTest(_value) {
+Foo.isOverZero = function (_value) {
 	var value = _value;
 
 	if (value > 0) {
@@ -136,7 +138,9 @@ function mochaTest(_value) {
 	} else {
 		return false;
 	}
-}
+};
+
+module.exports = Foo;
 
 var Test = function () {
 	function Test() {
