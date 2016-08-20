@@ -10,7 +10,7 @@ var mocha = require('gulp-mocha');
 // CSS plugins
 var sass    = require('gulp-sass');
 var postCss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
+var cssNext = require('postcss-cssnext');
 var csso    = require('gulp-csso');
 
 // HTML plugins
@@ -61,10 +61,10 @@ gulp.task('server', function() {
 
 /* COPY : HTML, CSS, JS などでないファイルを optimized にコピー */
 gulp.task('copy', function() {
-	var ignoreFiles   = '{html,css,js,haml,jade,pug,es6,sass,scss,gif,jpg,png,svg}';
-	var ignoreFolders = '{es6,sass,pug,plugins,jade_php}';
+	var ignoreSuffixes = '{html,css,js,haml,jade,pug,es6,sass,scss,gif,jpg,png,svg}';
+	var ignoreFolders  = '{es6,sass,pug,plugins,jade_php}';
 
-	gulp.src(['./source/**/*', '!./source/**/*.'+ignoreFiles, '!./source/'+ignoreFolders])
+	gulp.src(['./source/**/*', '!./source/**/*.'+ignoreSuffixes, '!./source/'+ignoreFolders])
 		.pipe(gulp.dest('./optimized/'));
 
 		// .DS_Store は削除
@@ -99,7 +99,7 @@ gulp.task('mocha', function () {
 /* Sass + Scss , and PostCSS */
 gulp.task('sass', function() {
 	var postCssTasks = [
-		autoprefixer({ browsers: ['last 2 version'] }),
+		cssNext({ browsers: ['last 2 version'] }),
 	];
 
 	gulp.src(['./source/sass/**/*.{sass,scss}'])
