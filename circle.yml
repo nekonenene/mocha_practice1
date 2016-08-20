@@ -6,8 +6,9 @@ machine:
 test:
     pre:
         - npm install -g mocha-junit-reporter
+        - mkdir -p $CIRCLE_TEST_REPORTS/junit/
 
     override:
-        - mocha --reporter mocha-junit-reporter
+        - mocha test --reporter mocha-junit-reporter:
             environment:
                 MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
