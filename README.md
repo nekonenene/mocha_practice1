@@ -8,7 +8,7 @@
 
 #### wercker
 
-[![wercker status](https://app.wercker.com/status/581d3f5ed513595bbfb694ecabeec3c5/m/master "wercker status")](https://app.wercker.com/project/byKey/581d3f5ed513595bbfb694ecabeec3c5)
+[![wercker status](https://app.wercker.com/status/581d3f5ed513595bbfb694ecabeec3c5/s/master "wercker status")](https://app.wercker.com/project/byKey/581d3f5ed513595bbfb694ecabeec3c5)
 
 
 ## 開発するには……
